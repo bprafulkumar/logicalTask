@@ -153,16 +153,15 @@ export default class App extends Component<IProps, IState, SS> {
 
   renderGripLayoutCount = ({item}: {item: GridList; index: number}) => {
     return (
-      <TouchableOpacity
+      <View
         style={[
           styles.gridContainer,
           this.state.isColorApplied
             ? this.layoutOnTouch(item.gridCount)
             : this.layoutColorsWithConditions(item.gridCount),
-        ]}
-        onPress={() => this.handleRenderSequnece(item.filterType)}>
+        ]}>
         <Text style={styles.count}>{item.gridCount}</Text>
-      </TouchableOpacity>
+      </View>
     );
   };
   resetColors = () => {
